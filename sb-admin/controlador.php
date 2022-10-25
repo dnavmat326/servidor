@@ -28,4 +28,5 @@ if (isset($_POST['id'])) {
     $_SESSION['proyectos'][] = $proyectos;
     array_multisort($_SESSION['proyectos']);
     header("Location: index.php");
+    
 }
