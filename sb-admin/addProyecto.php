@@ -34,9 +34,6 @@
                 </div>
                 <form class="user" action="controlador.php" method="post">
                     <div class="form-group">
-                        <input type="id" class="form-control form-control-user" id="id" name="id" aria-describedby="id" placeholder="id">
-                    </div>
-                    <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="nombre" name="nombre" aria-describedby="nombre" placeholder="nombre">
                     </div>
                     <div class="form-group">
@@ -46,10 +43,13 @@
                         <input type="date" class="form-control form-control-user" id="fechaF" name="fechaF" aria-describedby="Fecha fin" placeholder="Fecha fin">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control form-control-user" id="importancia" name="importancia" aria-describedby="importancia" placeholder="importancia">
+                        <input type="number" class="form-control form-control-user" id="porcentaje" name="porcentaje" aria-describedby="porcentaje" placeholder="Porcentaje Completado" min=0 max=100>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control form-control-user" id="importancia" name="importancia" aria-describedby="importancia" placeholder="importancia" min=1 max=5>
                     </div>
                     
-                    <input type="submit" value="Añadir" class="btn btn-primary btn-user btn-block" />
+                    <input type="submit" id="add" name="add" value="Añadir" class="btn btn-primary btn-user btn-block" />
 
                 </form>
                 <hr>
