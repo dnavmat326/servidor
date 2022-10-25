@@ -64,6 +64,8 @@
                                         "<td>" . $proyecto["dias"] . "</>" .
                                         "<td>" . $proyecto["porcentaje"] . "</>" .
                                         "<td>" . $proyecto["importancia"] . "</>" .
+                                        "<td><a href='verProyecto.php?id=".$proyecto["id"]."'>Ver</a></>" .
+                                        "<td><a href=''>Eliminar</a></>" .
                                         "</tr>"
                                     );
                                 }
@@ -75,7 +77,9 @@
                                     "<td>" . $_SESSION["proyectos"]["dias"] . "</>" .
                                     "<td>" . $_SESSION["proyectos"]["porcentaje"] . "</>" .
                                     "<td>" . $_SESSION["proyectos"]["importancia"] . "</>" .
-                                    "</tr>"
+                                    "<td><a href='verProyecto.php?id=".$proyecto["id"]."'>Ver</a></>" .
+                                        "<td><a href=''>Eliminar</a></>" .
+                                        "</tr>"
                                 );
                             }
                         }

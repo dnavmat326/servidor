@@ -22,37 +22,89 @@
 </head>
 
 <body id="page-top">
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Añadir Proyecto</h6>
-        </div>
-        <div class="card-body">
-            <div class="p-5">
-                <div class="text-center">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Ver Proyecto</h1>
+    </div>
 
+    <div class="row">
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Nombre</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <?php echo ($_SESSION['proyectos'][$_GET['id']]['nombre']); ?></div>
+                        </div>
+
+                    </div>
                 </div>
-                <form class="user" action="controlador.php" method="post">
-                    <div class="form-group">
-                        <input type="id" class="form-control form-control-user" id="id" name="id" aria-describedby="id" placeholder="id">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="nombre" name="nombre" aria-describedby="nombre" placeholder="nombre">
-                    </div>
-                    <div class="form-group">
-                        <input type="date" class="form-control form-control-user" id="fechaI" name="fechaI" aria-describedby="Fecha inicio" placeholder="Fecha inicio">
-                    </div>
-                    <div class="form-group">
-                        <input type="date" class="form-control form-control-user" id="fechaF" name="fechaF" aria-describedby="Fecha fin" placeholder="Fecha fin">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control form-control-user" id="importancia" name="importancia" aria-describedby="importancia" placeholder="importancia">
-                    </div>
-                    
-                    <input type="submit" value="Añadir" class="btn btn-primary btn-user btn-block" />
+            </div>
+        </div>
 
-                </form>
-                <hr>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Fecha Inicio</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <?php echo ($_SESSION['proyectos'][$_GET['id']]['fechaI']); ?></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Fecha Fin</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <?php echo ($_SESSION['proyectos'][$_GET['id']]['fechaF']); ?></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Dias Transcurridos</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <?php echo ($_SESSION['proyectos'][$_GET['id']]['dias']); ?></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                Importancia</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <?php echo ($_SESSION['proyectos'][$_GET['id']]['importancia']); ?></div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
