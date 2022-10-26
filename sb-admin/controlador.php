@@ -42,3 +42,18 @@ if (isset($_POST['add'])) {
     array_multisort($_SESSION['proyectos']);
     header("Location: index.php");
 }
+
+//Acción de eliminar todos los proyectos
+if ($_GET['accion'] == "eliminarTodo") {
+    $_SESSION['proyectos'] = array();
+    header("Location: index.php");
+}
+
+//Acción de eliminar un proyecto
+if ($_GET['accion'] == "eliminar") {
+
+    unset($_SESSION["proyectos"][$_GET["id"]]);
+
+
+    header("Location: index.php");
+}

@@ -65,11 +65,11 @@
                                         "<td>" . $proyecto["porcentaje"] . "</>" .
                                         "<td>" . $proyecto["importancia"] . "</>" .
                                         "<td><a href='verProyecto.php?id=" . $proyecto["id"] . "'>Ver</a></>" .
-                                        "<td><a href=''>Eliminar</a></>" .
+                                        "<td><a href='controlador.php?accion=eliminar&id=" . $proyecto["id"] . "'>Eliminar</a></>" .
                                         "</tr>"
                                     );
                                 }
-                            } else {
+                            } else if ($_SESSION["proyectos"] != array()) {
                                 echo ("<tr>" .
                                     "<td>" . $_SESSION["proyectos"]["nombre"] . "</>" .
                                     "<td>" . $_SESSION["proyectos"]["fechaI"] . "</>" .
@@ -78,7 +78,7 @@
                                     "<td>" . $_SESSION["proyectos"]["porcentaje"] . "</>" .
                                     "<td>" . $_SESSION["proyectos"]["importancia"] . "</>" .
                                     "<td><a href='verProyecto.php?id=" . $proyecto["id"] . "'>Ver</a></>" .
-                                    "<td><a href=''>Eliminar</a></>" .
+                                    "<td><a href='controlador.php?accion=eliminar&id=" . $proyecto["id"] . "'>Eliminar</a></>" .
                                     "</tr>"
                                 );
                             }

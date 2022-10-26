@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +60,7 @@
                 <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="addProyecto.php">Añadir</a>
-                        <a class="collapse-item" href="#">Eliminar</a>
+                        <a class="collapse-item" href="controlador.php?accion=eliminarTodo">Eliminar todo</a>
 
                     </div>
                 </div>
@@ -104,8 +104,9 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-lg-inline text-white-600 small"><?php if(isset($_SESSION['usuario'])){
-                                    echo $_SESSION['usuario'];}?></span>
+                                <span class="mr-2 d-lg-inline text-white-600 small"><?php if (isset($_SESSION['usuario'])) {
+                                                                                        echo $_SESSION['usuario'];
+                                                                                    } ?></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
