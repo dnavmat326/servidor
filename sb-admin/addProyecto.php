@@ -25,7 +25,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Añadir Proyecto</h6>
+            <h6 class="m-0 font-weight-bold text-info">Añadir Proyecto</h6>
         </div>
         <div class="card-body">
             <div class="p-5">
@@ -48,8 +48,8 @@
                     <div class="form-group">
                         <input type="number" class="form-control form-control-user" id="importancia" name="importancia" aria-describedby="importancia" placeholder="importancia" min=1 max=5>
                     </div>
-                    
-                    <input type="submit" id="add" name="add" value="Añadir" class="btn btn-primary btn-user btn-block" />
+
+                    <input type="submit" id="add" name="add" value="Añadir" class="btn btn-info btn-user btn-block" />
 
                 </form>
                 <hr>

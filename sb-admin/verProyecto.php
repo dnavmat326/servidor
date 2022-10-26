@@ -22,19 +22,16 @@
 </head>
 
 <body id="page-top">
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Ver Proyecto</h1>
-    </div>
 
-    <div class="row">
 
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+    <div class="row text-center">
+
+        <div class="col-xl-3 col-md mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Nombre</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 <?php echo ($_SESSION['proyectos'][$_GET['id']]['nombre']); ?></div>
@@ -45,15 +42,15 @@
             </div>
         </div>
 
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
+        <div class="col-xl-3 col-md mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Fecha Inicio</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <?php echo ($_SESSION['proyectos'][$_GET['id']]['fechaI']); ?></div>
+                                <?php echo (date('d/m/Y', strtotime($_SESSION['proyectos'][$_GET['id']]['fechaI']))); ?></div>
                         </div>
 
                     </div>
@@ -61,7 +58,7 @@
             </div>
         </div>
 
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-md mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -69,7 +66,7 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Fecha Fin</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <?php echo ($_SESSION['proyectos'][$_GET['id']]['fechaF']); ?></div>
+                                <?php echo (date('d/m/Y', strtotime($_SESSION['proyectos'][$_GET['id']]['fechaF'])));  ?></div>
                         </div>
 
                     </div>
@@ -77,12 +74,12 @@
             </div>
         </div>
 
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
+        <div class="col-xl-3 col-md mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Dias Transcurridos</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 <?php echo ($_SESSION['proyectos'][$_GET['id']]['dias']); ?></div>
@@ -92,12 +89,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-danger shadow h-100 py-2">
+        <div class="col-xl-3 col-md mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Importancia</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 <?php echo ($_SESSION['proyectos'][$_GET['id']]['importancia']); ?></div>
@@ -109,11 +106,11 @@
         </div>
         <!-- Donut Chart -->
 
-        <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
+        <div class="col-xl-4 col-lg">
+            <div class="card  mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Porcentaje</h6>
+                <div class="card-header py-4  border-left-info shadow h-100">
+                    <h6 class="m-0 font-weight-bold text-info">Porcentaje</h6>
                 </div>
                 <?php $porcentaje = $_SESSION['proyectos'][$_GET['id']]['porcentaje']; ?>
                 <!-- Card Body -->
@@ -133,7 +130,7 @@
     <!-- End of Main Content -->
 
     <!-- Footer -->
-    <footer class="sticky-footer bg-white bg-gradient-info">
+    <footer class="sticky-footer bg-info">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
                 <span class="text-light">Copyright &copy; PROYECTOS DIEGO 2022</span>
@@ -202,8 +199,8 @@
                 labels: ["Completado", "No completado"],
                 datasets: [{
                     data: [<?php echo ($porcentaje) ?>, 100 - <?php echo ($porcentaje) ?>],
-                    backgroundColor: ['#4e73df', '#1cc88a'],
-                    hoverBackgroundColor: ['#2e59d9', '#17a673'],
+                    backgroundColor: ['#5bc0de', '#9b9b9b'],
+                    hoverBackgroundColor: ['#3f869b', '#7c7c7c'],
                     hoverBorderColor: "rgba(234, 236, 244, 1)",
                 }],
             },
@@ -212,7 +209,7 @@
                 tooltips: {
                     backgroundColor: "rgb(255,255,255)",
                     bodyFontColor: "#858796",
-                    borderColor: '#dddfeb',
+                    borderColor: '#dddeb',
                     borderWidth: 1,
                     xPadding: 15,
                     yPadding: 15,

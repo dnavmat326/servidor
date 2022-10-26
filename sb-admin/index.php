@@ -25,11 +25,11 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Proyectos</h6>
+            <h6 class="m-0 font-weight-bold text-info text-center">Proyectos</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered text-center" style="font-size: 15px;" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -59,26 +59,26 @@
                                 foreach ($_SESSION["proyectos"] as $proyecto) {
                                     echo ("<tr>" .
                                         "<td>" . $proyecto["nombre"] . "</>" .
-                                        "<td>" . $proyecto["fechaI"] . "</>" .
-                                        "<td>" . $proyecto["fechaF"] . "</>" .
+                                        "<td>" . date('d/m/Y', strtotime($proyecto["fechaI"])) . "</>" .
+                                        "<td>" . date('d/m/Y', strtotime($proyecto["fechaF"])) . "</>" .
                                         "<td>" . $proyecto["dias"] . "</>" .
                                         "<td>" . $proyecto["porcentaje"] . "</>" .
                                         "<td>" . $proyecto["importancia"] . "</>" .
-                                        "<td><a href='verProyecto.php?id=" . $proyecto["id"] . "'>Ver</a></>" .
-                                        "<td><a href='controlador.php?accion=eliminar&id=" . $proyecto["id"] . "'>Eliminar</a></>" .
+                                        "<td><a href='verProyecto.php?id=" . $proyecto["id"] . "' class='btn btn-info btn-circle'> <i class='fas fa-info-circle'></i></a></>" .
+                                        "<td><a href='controlador.php?accion=eliminar&id=" . $proyecto["id"] . "'class='btn btn-danger btn-circle'><i class='fas fa-trash'></i></a></>" .
                                         "</tr>"
                                     );
                                 }
                             } else if ($_SESSION["proyectos"] != array()) {
                                 echo ("<tr>" .
                                     "<td>" . $_SESSION["proyectos"]["nombre"] . "</>" .
-                                    "<td>" . $_SESSION["proyectos"]["fechaI"] . "</>" .
-                                    "<td>" . $_SESSION["proyectos"]["fechaF"] . "</>" .
+                                    "<td>" . date('d/m/Y', strtotime($proyecto["fechaI"])) . "</>" .
+                                    "<td>" . date('d/m/Y', strtotime($proyecto["fechaF"])) . "</>" .
                                     "<td>" . $_SESSION["proyectos"]["dias"] . "</>" .
                                     "<td>" . $_SESSION["proyectos"]["porcentaje"] . "</>" .
                                     "<td>" . $_SESSION["proyectos"]["importancia"] . "</>" .
-                                    "<td><a href='verProyecto.php?id=" . $proyecto["id"] . "'>Ver</a></>" .
-                                    "<td><a href='controlador.php?accion=eliminar&id=" . $proyecto["id"] . "'>Eliminar</a></>" .
+                                    "<td><a href='verProyecto.php?id=" . $proyecto["id"] . "' class='btn btn-info btn-circle'> <i class='fas fa-info-circle'></i></a></>" .
+                                    "<td><a href='controlador.php?accion=eliminar&id=" . $proyecto["id"] . "'class='btn btn-danger btn-circle'><i class='fas fa-trash'></i></a></>" .
                                     "</tr>"
                                 );
                             }
