@@ -31,15 +31,16 @@ if (isset($_POST['email'])) {
 }
 
 if (isset($_POST['add'])) {
-    $id = 0;
-    if (isset($_SESSION['proyectos'])) {
-        $id = count($_SESSION['proyectos']);
+    if(empty($_SESSION["proyectos"])){
+        $id=0;
+    } else{
+        $idd=array_column($_SESSION["proyectos"], 'id');
+        $id=max($idd)+1;
     }
 
     $proyectos = ["id" => $id, "nombre" => $_POST['nombre'], "fechaI" => $_POST['fechaI'], "fechaF" => $_POST['fechaF'], "dias" => dias_pasados($_POST['fechaI'], date("Y-m-d")), "porcentaje" => $_POST['porcentaje'], "importancia" => $_POST['importancia']];
 
     $_SESSION['proyectos'][] = $proyectos;
-    array_multisort($_SESSION['proyectos']);
     header("Location: index.php");
 }
 
@@ -56,4 +57,12 @@ if ($_GET['accion'] == "eliminar") {
 
 
     header("Location: index.php");
+}
+
+if ($_GET['accion'] == "salir") {
+
+    session_destroy();
+
+
+    header("Location: login.php");
 }
