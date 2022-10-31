@@ -9,7 +9,7 @@
 	<ul class="list-unstyled ps-0">
 		<li class="mb-1">
 			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema1" aria-expanded="false">
-				TEMA 1
+				Practica 1.1
 			</button>
 			<div class="collapse" id="tema1">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -33,7 +33,7 @@
 		</li>
 		<li class="mb-1">
 			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#practica2" aria-expanded="false">
-				Practica 2
+				Practica 1.2
 			</button>
 			<div class="collapse" id="practica2">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -50,11 +50,10 @@
 		</li>
 
 		<li class="mb-1">
-			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#cookies" aria-expanded="false"> Cookies
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#cookies" aria-expanded="false"> Practica Cookies
 			</button>
 			<div class="collapse" id="cookies">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="/cookies/crearCookie.php" class="link-dark rounded">crearCookie.php</a></li>
 					<li><a href="/cookies/index.php" class="link-dark rounded">index.php</a></li>
 
 
@@ -62,7 +61,7 @@
 			</div>
 		</li>
 		<li class="mb-1">
-			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#admin" aria-expanded="false"> SB-Admin
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#admin" aria-expanded="false"> Practica SB-Admin
 			</button>
 			<div class="collapse" id="admin">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -74,48 +73,15 @@
 			</div>
 		</li>
 		<li class="mb-1">
-			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema2" aria-expanded="false">
-				TEMA 2
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#ahorcado" aria-expanded="false"> Practica Ahorcado
 			</button>
-			<div class="collapse" id="tema2">
+			<div class="collapse" id="ahorcado">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					
+					<li><a href="/ahorcado/index.php" class="link-dark rounded">Ahorcado</a></li>
 				</ul>
 			</div>
 		</li>
 
-		<li class="mb-1">
-			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema3" aria-expanded="false">
-				TEMA 3
-			</button>
-			<div class="collapse" id="tema3">
-				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
-				</ul>
-			</div>
-		</li>
-
-		<li class="mb-1">
-			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema4" aria-expanded="false">
-				TEMA 4
-			</button>
-			<div class="collapse" id="tema4">
-				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
-				</ul>
-			</div>
-		</li>
-
-		<li class="mb-1">
-			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-				TEMA 5
-			</button>
-			<div class="collapse" id="dashboard-collapse">
-				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
-				</ul>
-			</div>
-		</li>
 
 	</ul>
 </div>

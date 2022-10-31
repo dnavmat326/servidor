@@ -3,7 +3,7 @@
 function pintarTambor()
 {
 
-    echo "<div class='row'>";
+     echo "<div class='row'>";
 
     foreach ($_SESSION['tambor'] as $num) {
         echo "<div class='col'>";
