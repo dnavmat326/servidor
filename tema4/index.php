@@ -1,49 +1,104 @@
-<?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+<?php include("header.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
 
-//Load Composer's autoloader
-require './vendor/autoload.php';
+<head>
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'jjavierguillen@gmail.com';                     //SMTP username
-    $mail->Password   = 'feaucnjdvdfdtakx';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    <title>SB Admin</title>
 
-    //Recipients
-    $mail->setFrom('jjavierguillen@gmail.com', 'Javier');
-    $mail->addAddress('jjavierguillen@gmail.com', 'ProfeJJ');     //Add a recipient
-    //$mail->addAddress('ellen@example.com');               //Name is optional
-    //$mail->addReplyTo('info@example.com', 'Information');
-    //$mail->addCC('cc@example.com');
-    //$mail->addBCC('bcc@example.com');
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    //Attachments
-    //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    $mail->addAttachment('./ejemplo.pdf', 'ejemplo.pdf');    //Optional name
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Correo de prueba con Gmail';
-    $mail->Body    = 'Este el cuerpo del mensaje <b>ojo, viene con adjunto!</b>';
-    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+</head>
 
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+<body id="page-top">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-info text-center">Proyectos</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered text-center" style="font-size: 15px;" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>FechaInicio</th>
+                            <th>FechaFin</th>
+                            <th>DiasTranscurridos</th>
+                            <th>Porcentaje</th>
+                            <th>Importancia</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>FechaInicio</th>
+                            <th>FechaFin</th>
+                            <th>DiasTranscurridos</th>
+                            <th>Porcentaje</th>
+                            <th>Importancia</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
 
-?>
+                        <?php
+
+                        if (isset($_SESSION["proyectos"])) {
+                            if (isset($_SESSION["proyectos"][0]) && is_array($_SESSION["proyectos"][0])) {
+                                foreach ($_SESSION["proyectos"] as $proyecto) {
+                                    echo ("<tr>" .
+                                        "<td>" . $proyecto["nombre"] . "</>" .
+                                        "<td>" . date('d/m/Y', strtotime($proyecto["fechaI"])) . "</>" .
+                                        "<td>" . date('d/m/Y', strtotime($proyecto["fechaF"])) . "</>" .
+                                        "<td>" . $proyecto["dias"] . "</>" .
+                                        "<td>" . $proyecto["porcentaje"] . "</>" .
+                                        "<td>" . $proyecto["importancia"] . "</>" .
+                                        "<td><a href='verProyecto.php?id=" . $proyecto["id"] . "' class='btn btn-info btn-circle'> <i class='fas fa-info-circle'></i></a></>" .
+                                        "<td><a href='controlador.php?accion=eliminar&id=" . $proyecto["id"] . "'class='btn btn-danger btn-circle'><i class='fas fa-trash'></i></a></>" .
+                                        "</tr>"
+                                    );
+                                }
+                            } else if ($_SESSION["proyectos"] != array()) {
+                                echo ("<tr>" .
+                                    "<td>" . $_SESSION["proyectos"]["nombre"] . "</>" .
+                                    "<td>" . date('d/m/Y', strtotime($proyecto["fechaI"])) . "</>" .
+                                    "<td>" . date('d/m/Y', strtotime($proyecto["fechaF"])) . "</>" .
+                                    "<td>" . $_SESSION["proyectos"]["dias"] . "</>" .
+                                    "<td>" . $_SESSION["proyectos"]["porcentaje"] . "</>" .
+                                    "<td>" . $_SESSION["proyectos"]["importancia"] . "</>" .
+                                    "<td><a href='verProyecto.php?id=" . $proyecto["id"] . "' class='btn btn-info btn-circle'> <i class='fas fa-info-circle'></i></a></>" .
+                                    "<td><a href='controlador.php?accion=eliminar&id=" . $proyecto["id"] . "'class='btn btn-danger btn-circle'><i class='fas fa-trash'></i></a></>" .
+                                    "</tr>"
+                                );
+                            }
+                        }
+                        ?>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+<?php include("footer.php"); ?>

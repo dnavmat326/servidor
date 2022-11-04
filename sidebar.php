@@ -81,7 +81,18 @@
 				</ul>
 			</div>
 		</li>
+		<li class="mb-1">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#adminPdf" aria-expanded="false"> Practica SB-Admin PDF
+			</button>
+			<div class="collapse" id="adminPdf">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+					<li><a href="/tema4/login.php" class="link-dark rounded">Panel</a></li>
 
+
+
+				</ul>
+			</div>
+		</li>
 
 	</ul>
 </div>
