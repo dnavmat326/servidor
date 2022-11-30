@@ -69,5 +69,42 @@ class PrestamoBD
 
        
     }
+
+
+    public static function buscarPrestamos($estado)
+    {
+
+        $conexion = ConexionBD::conectar();
+
+        //Consulta BBDD
+        $stmt = $conexion->prepare("SELECT prestamos.idPrestamo, libros.titulo, usuarios.nombre, prestamos.fecha_inicio, prestamos.fecha_fin,prestamos.estado FROM prestamos join usuarios join libros where prestamos.idUsuario=usuarios.idUsuario and prestamos.idLibro=libros.idLibro and prestamos.estado=?");
+        $stmt->bindValue(1, $estado);
+        $stmt->execute();
+
+        //Usamos FETCH_CLASS para que convierta a objetos las filas de la BD
+        $prestamos = $stmt->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Prestamo');
+
+        ConexionBD::cerrar();
+
+        return $prestamos;
+    }
+
+    public static function buscarPrestamosDni($dni)
+    {
+
+        $conexion = ConexionBD::conectar();
+
+        //Consulta BBDD
+        $stmt = $conexion->prepare("SELECT prestamos.idPrestamo, libros.titulo, usuarios.nombre, prestamos.fecha_inicio, prestamos.fecha_fin,prestamos.estado FROM prestamos join usuarios join libros where prestamos.idUsuario=usuarios.idUsuario and prestamos.idLibro=libros.idLibro and usuarios.dni like ?");
+        $stmt->bindValue(1, "%".$dni."%");
+        $stmt->execute();
+
+        //Usamos FETCH_CLASS para que convierta a objetos las filas de la BD
+        $prestamos = $stmt->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Prestamo');
+
+        ConexionBD::cerrar();
+
+        return $prestamos;
+    }
 }
 ?>

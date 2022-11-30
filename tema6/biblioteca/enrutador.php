@@ -37,6 +37,7 @@ if ($_REQUEST) {
             ControladorPrestamo::mostrarPrestamos();
         }
     }
+
     //para añadir prestamo
 if (isset($_GET["insertar"])) {
     $usuario = filtrado($_GET["usuario"]);
@@ -47,6 +48,8 @@ if (isset($_GET["insertar"])) {
     PrestamoBD::insertPrestamo($usuario,$libro,$estado,$fechaI,$fechaF);
     ControladorPrestamo::mostrarPrestamos();
 }
+    //para actualizar prestamo
+
 if (isset($_GET["update"])) {
     $id = filtrado($_GET["id"]);
     $estado = filtrado($_GET["estado"]);
@@ -54,6 +57,19 @@ if (isset($_GET["update"])) {
     $fechaF = filtrado($_GET["fechaF"]);
     PrestamoBD::updatePrestamo($id,$estado,$fechaI,$fechaF);
     ControladorPrestamo::mostrarPrestamos();
+}
+    //para buscar prestamo por estado
+
+if (isset($_GET["buscarEstado"])) {
+    $estado = filtrado($_GET["estado"]);
+    ControladorPrestamo::mostrarPrestamosEstado($estado);
+}
+
+    //para buscar prestamo por dni
+
+if (isset($_GET["buscarDni"])) {
+    $dni = filtrado($_GET["dni"]);
+    ControladorPrestamo::mostrarPrestamosDni($dni);
 }
 }
 ?>

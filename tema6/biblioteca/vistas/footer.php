@@ -45,10 +45,15 @@
     </div>
     <!-- End of Main Content -->
     <!-- Footer -->
-    <footer class="sticky-footer bg-dark">
+    </body>
+
+    <footer class="bg-dark" style="position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3%;">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-                <span class="text-light font-weight-bold">Copyright &copy; BLIBLIOTECA JUEGOS 2022</span>
+                <span class="text-light font-weight-bold">Copyright &copy; BLIBLIOTECA DIEGO 2022</span>
             </div>
         </div>
     </footer>
@@ -57,10 +62,7 @@
     <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+    
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -185,10 +187,9 @@
                 </div>
                 <div class="modal-footer">
                     <!--<button type="button" class="btn btn-secondary hidden-xs" data-bs-dismiss="modal">Close</button>-->
-                    <button type='submit' name='insertar' class='btn btn-primary' form="formInsertar"
-                    formaction="../biblioteca/enrutador.php" formmethod="get">Enviar</button>
+                    <button type='submit' name='insertar' class='btn btn-success' form="formInsertar"
+                    formaction="../biblioteca/enrutador.php" formmethod="get">Añadir</button>
                 </div>
             </div>
         </div>
     </div>
-</body>

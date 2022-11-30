@@ -35,16 +35,6 @@
                 echo '<td>' . $usuario->getEmail() . '</td>';
 
         
-                //Acciones
-                /*echo "<td><a href='localizaciones.php?id=" . $juego['id'] . "' class='btn btn-info btn-circle' style='--bs-btn-color: #ffffff; --bs-btn-hover-color: #fff;'> <i
-                class='fas fa-map'></i></a></>";
-                echo "<td><a href='controlador.php?accion=addLoca&id=" . $juego['id'] . "'  class='btn btn-success btn-circle'><i
-                class='fas fa-plus' ></i></a></td>";
-        
-                echo "<td><a href='controlador.php?accion=borrar&id=" . $juego['id'] . "'  class='btn btn-danger btn-circle'><i 
-                class='fas fa-trash' ></i></a></td>";
-        
-                echo "</tr>";*/
         
             }
             echo "</table>";

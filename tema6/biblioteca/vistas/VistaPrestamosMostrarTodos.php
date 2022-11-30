@@ -7,20 +7,6 @@ class VistaPrestamosMostrarTodos
     {
 
         include("./vistas/header.php");
-        
-        echo "<ul class='table table-bordered text-center' style='font-size: 15px;align-items: center;' id='sortable_list' width='100%' cellspacing='0'>";
-        //Cabecera
-        echo "<li id='listitem' class='clearfix header'>";
-        echo "<div class='listitem_uno'> Libro </div>";
-        echo "<div class='listitem_uno'> Usuario </div>";
-        echo "<div class='listitem_uno'> fechaI </div>";
-        echo "<div class='listitem_uno'> fechaF </div>";
-        echo "<div class='listitem_uno'> estado </div>";
-        echo "<div class='listitem_uno'> acciones </div>";
-        echo "</li>";
-
-
-
         //Contenido
         $options = array(
             'Activo' => 'Activo',
@@ -28,36 +14,30 @@ class VistaPrestamosMostrarTodos
             'Sobrepasado1Mes' => 'Sobrepasado1Mes',
             'Sobrepasado1Año' => 'Sobrepasado1Año'
         );
-        
+echo '<div class="card-deck">
+';
         foreach ($prestamos as $prestamo) {
+            echo '  <div class="col-sm-6">';
             echo '<form action="./enrutador.php" method="get" name="update" id="update">';
-            echo '<li id="listitem_1" class="clearfix">';
-            echo "<div class='listitem_uno'>";
-            echo $prestamo->titulo;
-            echo '</div>';
-            echo "<div class='listitem_uno'>";
-            echo  $prestamo->nombre ;
-            echo '</div>';
-            echo "<div class='listitem_uno'>";
-
-            echo '<input name="fechaI" type="date" value="' . $prestamo->getFecha_inicio() . '">';
-            echo '</div>';
-            echo "<div class='listitem_uno'>";
-
-            echo '<input name="fechaF" type="date" value="' . $prestamo->getFecha_fin() . '">';
-            echo '</div>';
-            echo "<div class='listitem_uno'>";
-
+            echo '<div class="card text-white bg-dark mb-3">
+            <h5 class="card-header">Usuario: ' . $prestamo->nombre . '</h5>
+            <div class="card-body">
+            <h5 class="card-title">Libro: ' . $prestamo->titulo . '</h5>
+            <p class="card-text">Fecha de Inicio: <input name="fechaI" type="date" value="' . $prestamo->getFecha_inicio() . '"></p>
+            <p class="card-text">Fecha de Fin: <input name="fechaF" type="date" value="' . $prestamo->getFecha_fin() . '"></p>
+            <p class="card-text">Estado del préstamo';
 ?>
 <select class="form-select" name="estado" id="estado" aria-label="Default select example">
 
-        <?php foreach ($options as $var => $opt): ?>
-        <option value="<?php echo $var ?>" <?php if ($var==$prestamo->getEstado()): ?>selected="selected"
-            <?php endif; ?> >
-            <?php echo $opt ?>
-        </option>
-        <?php endforeach; ?>
-    </select>
+    <?php foreach ($options as $var => $opt): ?>
+    <option value="<?php echo $var ?>" <?php if ($var==$prestamo->getEstado()): ?>selected="selected"
+        <?php endif; ?>>
+        <?php echo $opt ?>
+    </option>
+    <?php endforeach; ?>
+</select>
+
+
 
 
 <?php
@@ -65,21 +45,20 @@ class VistaPrestamosMostrarTodos
 
 
 
-            //Acciones
-            echo '</div>';
-            echo "<div class='listitem_uno'>";
-            echo ' <input type="hidden" name="id" value="' . $prestamo->getIdPrestamo() . '"><input type="submit" value="Actualizar" name="update">';
-            echo "</div>";
-            echo "</li>";
-            echo '</form>';
 
+            echo '</p>
+            <input type="hidden" name="id" value="' . $prestamo->getIdPrestamo() . '"><input type="submit" value="Actualizar" name="update" class="btn btn-success">
+            </div>
+            </div>';
+            echo '</form>';
+            echo '</div>';
         }
-        echo "</ul>";
-       
+
+echo '</div>';
 
 
         include("./vistas/footer.php");
     }
 
 }
-?>
+    ?>
