@@ -100,9 +100,15 @@
 			<div class="collapse" id="biblioteca">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<li><a href="/tema6/biblioteca/index.php" class="link-dark rounded">biblioteca</a></li>
-
-
-
+				</ul>
+			</div>
+		</li>
+		<li class="mb-1">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#blackjack" aria-expanded="false"> Practica blackjack
+			</button>
+			<div class="collapse" id="blackjack">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+					<li><a href="/tema7/blackJack/index.php" class="link-dark rounded">blackjack</a></li>
 				</ul>
 			</div>
 		</li>
