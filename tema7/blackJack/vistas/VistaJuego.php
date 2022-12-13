@@ -584,18 +584,19 @@ class VistaJuego
 
         }
 
-        if ($_SESSION['result']) {
-            echo "<h2 class='border border-white btn btn-dark btn-lg p-3 ms-5 mt-5' style='
-        font-size: 30px;
-    '>Resultado Final: " . $r . "</h2>";
-        }
+        
 
 
 
                 ?>
             </div>
+            <?php if ($_SESSION['result']) {
+            echo "<div class='col-2 d-flex justify-content-end align-items-center'><h2 class='border border-white btn btn-dark btn-lg p-3 ms-5 mt-5' style='
+        font-size: 50px;
+    '>Resultado Final: " . $r . "</h2></div>";
+        }?>
         </div>
-
+        
         <!-- Efecto fondo -->
         <li></li>
         <li></li>
