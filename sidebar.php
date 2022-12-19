@@ -112,6 +112,15 @@
 				</ul>
 			</div>
 		</li>
+		<li class="mb-1">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#regalos" aria-expanded="false"> Practica Regalos
+			</button>
+			<div class="collapse" id="regalos">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+					<li><a href="/tema7/regalosNavidad/index.php" class="link-dark rounded">Regalos Navidad</a></li>
+				</ul>
+			</div>
+		</li>
 
 	</ul>
 </div>
