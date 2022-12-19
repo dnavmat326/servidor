@@ -34,7 +34,7 @@
                 <div class="sidebar-brand-icon bg-login-image img-thumbnail rotate-n-15 text-info  w-100">
                     <i class="fas fa-laugh-wink" style="visibility:hidden"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Regalos <sup>DIEGO</sup></div>
+                <div class="sidebar-brand-text mx-3">Examen <sup>DIEGO</sup></div>
             </a>
 
             <!-- Divider -->
