@@ -67,12 +67,12 @@
                             Partida</a>
                         <form class="collapse-item" action="./enrutador.php" method="get" name="buscarFecha"
                             id="buscarFecha">
-                            <input type="date" name="fecha" id="">
+                            <input type="date" name="fecha" id=""><br>
                             <input class="btn btn-outline-dark" type="submit" value="Filtrar Fecha" name="buscarFecha">
                         </form>
                         <form class="collapse-item" action="./enrutador.php" method="get" name="buscarCiudad"
                             id="buscarCiudad">
-                            <input type="text" name="ciudad" id="">
+                            <input type="text" name="ciudad" id=""><br>
                             <input class="btn btn-outline-dark" type="submit" value="Filtrar Ciudad" name="buscarCiudad">
                         </form>
                         
