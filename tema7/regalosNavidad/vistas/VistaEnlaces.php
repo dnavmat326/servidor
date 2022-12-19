@@ -199,7 +199,7 @@ class VistaEnlaces
                 "<td><a href='" . $enlace->getLink() . "'>" . $enlace->getLink() . "</a>
                 </>" .
                 "<td>" . $enlace->getPrecio() . "</>" .
-                "<td><img src='" . $enlace->getImagen() . "' class='img-fluid rounded-top'>
+                "<td><img src='" . $enlace->getImagen() . "' class='img-fluid rounded-top w-25'>
                 </>" .
                 "<td>" . $enlace->getPrioridad() . "</>" .
                 "<td><a href='enrutador.php?accion=eliminarEnlace&id=" . $enlace->getIdEnlace() . "'class='btn btn-danger btn-circle'><i class='fas fa-trash'></i></a></>" .
